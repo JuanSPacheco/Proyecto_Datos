@@ -1,0 +1,62 @@
+CREATE TABLE etnia (
+	codigo integer NOT NULL,
+	nombre varchar(15),
+	PRIMARY KEY (codigo)
+);
+
+CREATE TABLE departamento (
+	codigo integer NOT NULL,
+	nombre varchar(20),
+	PRIMARY KEY (codigo)
+);
+
+CREATE TABLE municipio (
+	codigo integer NOT NULL,
+	nombre varchar(25),
+	codigo_departamento integer,
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (codigo_departamento) REFERENCES departamento (codigo)
+);
+
+CREATE TABLE persona (
+	cedula integer NOT NULL,
+	edad integer,
+	sexo varchar(1),
+	codigo_municipio integer,
+	codigo_etnia integer,
+	PRIMARY KEY (cedula),
+	FOREIGN KEY (codigo_municipio) REFERENCES municipio (codigo),
+	FOREIGN KEY (codigo_etnia) REFERENCES etnia (codigo)
+);
+
+
+CREATE TABLE caso (
+	id integer NOT NULL,
+	fecha_de_notificacion date,
+	cedula_persona integer ,
+	PRIMARY KEY (id),
+	FOREIGN KEY (cedula_persona) REFERENCES persona (cedula)
+);
+
+CREATE TABLE contagio (
+	cedula_persona integer NOT NULL,
+	tipo_de_contagio varchar(15),
+	fecha_inicio_de_sintomas date,
+	fecha_de_diagnostico date,
+	estado varchar(15),
+	PRIMARY KEY (cedula_persona),
+	FOREIGN KEY (cedula_persona) REFERENCES persona (cedula),
+	UNIQUE (cedula_persona)
+);
+
+CREATE TABLE recuperacion (
+	cedula_persona integer NOT NULL,
+	recuperado varchar(15),
+	fecha_de_recuperacion date,
+	tipo_de_recuperacion varchar(10),
+	PRIMARY KEY (cedula_persona),
+	FOREIGN KEY (cedula_persona) REFERENCES persona (cedula),
+	UNIQUE (cedula_persona)
+);
+
+
