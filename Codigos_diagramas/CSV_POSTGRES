@@ -1,0 +1,7 @@
+copy departamento(codigo, nombre) from 'C:\Users\Public\departamento.csv' delimiter ';' csv header;
+copy municipio(codigo, nombre, codigo_departamento) from 'C:\Users\Public\municipio.csv' delimiter ';' csv header;
+copy persona(cedula, edad, sexo, codigo_municipio, codigo_etnia) from 'C:\Users\Public\persona.csv' delimiter ';' csv header;
+copy caso(id, fecha_de_notificacion, cedula_persona) from 'C:\Users\Public\caso.csv' delimiter ';' csv header;
+copy etnia(codigo, nombre) from 'C:\Users\Public\etnia.csv' delimiter ';' csv header;
+copy contagio(cedula_persona, tipo_de_contagio, fecha_inicio_de_sintomas, fecha_de_diagnostico, estado) from 'C:\Users\Public\contagio.csv' delimiter ';' csv header;
+copy recuperacion(cedula_persona, recuperado, fecha_de_recuperacion, tipo_de_recuperacion) from 'C:\Users\Public\recuperacion.csv' delimiter ';' csv header;
