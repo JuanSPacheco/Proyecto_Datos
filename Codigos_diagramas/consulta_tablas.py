@@ -45,53 +45,6 @@ finally:
 print("\n")     
 
 #-----------------------------------------------
-print("Tabla departamento_municipio")
-try:
-    connection = psycopg2.connect(
-        host = 'localhost',
-        user = 'postgres',
-        password = '123456789',
-        database = 'sec_entrega'
-    )
-    print("Conexión exitosa")
-    cursor = connection.cursor()
-    cursor.execute("select * from departamento_municipio")
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
-except Exception as ex:
-    print(ex)
-finally:
-    connection.close()
-    print("Conexión finalizada") 
-      
-print("\n")     
- 
-#-----------------------------------------------
-print("Tabla municipio_persona")    
-    
-try:
-     connection = psycopg2.connect(
-         host = 'localhost',
-         user = 'postgres',
-         password = '123456789',
-         database = 'sec_entrega'
-     )
-     print("Conexión exitosa")
-     cursor = connection.cursor()
-     cursor.execute("select * from municipio_persona")
-     rows = cursor.fetchall()
-     for row in rows:
-         print(row)
-except Exception as ex:
-     print(ex)
-finally:
-     connection.close()
-     print("Conexión finalizada")
-     
-print("\n") 
-   
-#-----------------------------------------------
 print("Tabla caso")       
 try:
        connection = psycopg2.connect(
@@ -113,29 +66,6 @@ finally:
        print("Conexión finalizada")
               
 print("\n")   
-  
-#-----------------------------------------------  
-print("Tabla caso_persona")            
-try:
-       connection = psycopg2.connect(
-           host = 'localhost',
-           user = 'postgres',
-           password = '123456789',
-           database = 'sec_entrega'
-       )
-       print("Conexión exitosa")
-       cursor = connection.cursor()
-       cursor.execute("select * from caso_persona")
-       rows = cursor.fetchall()
-       for row in rows:
-           print(row)
-except Exception as ex:
-       print(ex)
-finally:
-       connection.close()
-       print("Conexión finalizada")
-
-print("\n")     
 
 #-----------------------------------------------
 print("Tabla contagio")          
@@ -204,29 +134,6 @@ finally:
         connection.close()
         print("Conexión finalizada")        
      
-print("\n")     
-
-#-----------------------------------------------   
-print("Tabla persona_etnia")      
-try:
-        connection = psycopg2.connect(
-            host = 'localhost',
-            user = 'postgres',
-            password = '123456789',
-            database = 'sec_entrega'
-        )
-        print("Conexión exitosa")
-        cursor = connection.cursor()
-        cursor.execute("select * from persona_etnia")
-        rows = cursor.fetchall()
-        for row in rows:
-            print(row)
-except Exception as ex:
-        print(ex)
-finally:
-        connection.close()
-        print("Conexión finalizada")    
-    
 print("\n")     
 
 #-----------------------------------------------
